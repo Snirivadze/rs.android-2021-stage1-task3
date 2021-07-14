@@ -1,10 +1,9 @@
 package subtask2
 
 import kotlin.collections.ArrayList
+import kotlin.math.sqrt
 
-    // TODO: Complete the following function
-
-    class SquareDecomposer {
+class SquareDecomposer {
 
         fun decomposeNumber(number: Int): Array<Int>? {
             return if (number < 3) null
@@ -16,7 +15,7 @@ import kotlin.collections.ArrayList
                 val ost = number - i * i
                 if (ost == 0) return arrayListOf(i)
                 if (ost < 0) return null
-                var root = kotlin.math.sqrt(ost.toDouble()).toInt()
+                var root = sqrt(ost.toDouble()).toInt()
                 if (root >= i) root = i - 1
                 val result = combination(ost, root)
                 if (result != null) {
